@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dardi bedavoman 💔</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --main-pink: #ff4e74;
+      --dark-bg: #0f0c29;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: #fff;
+      text-align: center;
+      padding: 1rem;
+      position: relative;
+      min-height: 100vh;
+      overflow: hidden;
+    }
+    .background {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: url('./image.png') no-repeat center center;
+      background-size: cover;
+      filter: blur(8px);
+      z-index: -2;
+    }
+    .overlay {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: -1;
+    }
+    h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 3rem;
+      color: var(--main-pink);
+      margin-bottom: 0.3rem;
+      animation: fadeIn 2s ease forwards;
+    }
+    h2 {
+      font-weight: 300;
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      animation: fadeIn 3s ease forwards;
+    }
+    img {
+      width: 160px;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 4px solid var(--main-pink);
+      margin-bottom: 2.5rem;
+      box-shadow: 0 0 25px rgba(255, 78, 116, 0.5);
+      animation: fadeIn 4s ease forwards;
+    }
+    p {
+      max-width: 600px;
+      margin: 0 auto;
+      font-size: 1rem;
+      line-height: 1.8;
+      animation: fadeIn 5s ease forwards;
+      padding: 0 1rem;
+    }
+    .btn {
+      margin-top: 2rem;
+      padding: 12px 24px;
+      background: var(--main-pink);
+      color: white;
+      border: none;
+      border-radius: 12px;
+      font-size: 1rem;
+      cursor: pointer;
+      box-shadow: 0 4px 14px rgba(255, 78, 116, 0.5);
+      transition: transform 0.2s ease;
+      animation: fadeIn 6s ease forwards;
+    }
+    .btn:hover { transform: scale(1.05); }
+    footer {
+      margin-top: 1rem;
+      font-size: 0.9rem;
+      color: #ccc;
+      animation: fadeIn 7s ease forwards;
+    }
+    .heart {
+      position: absolute;
+      width: 24px;
+      height: 24px;
+      background: url('https://cdn-icons-png.flaticon.com/512/833/833472.png') no-repeat center;
+      background-size: contain;
+      animation: fall 10s linear infinite;
+      opacity: 0.4;
+    }
+    .love-form {
+      margin-top: 2rem;
+      animation: fadeIn 5s ease forwards;
+    }
+    .love-form h2 {
+      color: var(--main-pink);
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+      font-family: 'Great Vibes', cursive;
+    }
+    .love-form form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+    .love-form textarea {
+      width: 100%;
+      max-width: 500px;
+      min-height: 120px;
+      padding: 1rem;
+      border-radius: 10px;
+      border: none;
+      font-size: 1rem;
+      resize: none;
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
+      outline: none;
+      backdrop-filter: blur(4px);
+      box-shadow: 0 0 12px rgba(255, 78, 116, 0.3);
+    }
+    .love-form button {
+      background: var(--main-pink);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 12px 24px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.2s ease;
+      box-shadow: 0 4px 14px rgba(255, 78, 116, 0.5);
+    }
+    .love-form button:hover {
+      background: #e13d64;
+      transform: scale(1.05);
+    }
+    #successMsg {
+      color: #ccc;
+      font-style: italic;
+      margin-top: 1rem;
+    }
+    @keyframes fall {
+      0% { transform: translateY(-10%); }
+      100% { transform: translateY(120vh); }
+    }
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    @media (max-width: 768px) {
+      h1 { font-size: 2.4rem; }
+      h2 { font-size: 1rem; }
+      img { width: 110px; height: 110px; }
+      p { font-size: 0.9rem; line-height: 1.6; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="background"></div>
+  <div class="overlay"></div>
+
+  <h2>Marjonam... yuragim sendan boshqa hech kimni istamaydi.</h2>
+  <img src="./image.png" alt="Marjona rasmi" />
+
+  <button class="btn" onclick="document.getElementById('music').play()">🎵 Musiqani yoqish</button>
+  <footer>5-fevral — seni uchratgan kunim...</footer>
+
+  <audio id="music" loop>
+    <source src="./music.mp3" type="audio/mp3" />
+  </audio>
+
+  <section class="love-form">
+    <h2>💌 Dilmurodingga maktub yoz</h2>
+    <form id="loveForm">
+      <textarea placeholder="Dil izhoringizni bu yerga yozing..." required></textarea>
+      <button type="submit">Yuborish 💖</button>
+    </form>
+    <p id="successMsg" style="display:none;">Maktubingiz yuborildi! 💌</p>
+  </section>
+
+  <script>
+    // Yuraklar animatsiyasi
+    for (let i = 0; i < 25; i++) {
+      const heart = document.createElement("div");
+      heart.classList.add("heart");
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = (Math.random() * 5 + 5) + "s";
+      heart.style.top = -Math.random() * 100 + "px";
+      document.body.appendChild(heart);
+    }
+
+    // Maktub yuborish funksiyasi
+    const form = document.getElementById("loveForm");
+    const success = document.getElementById("successMsg");
+
+    form.addEventListener("submit", async function(e) {
+      e.preventDefault();
+      const text = form.querySelector("textarea").value.trim();
+      if (text) {
+        await fetch('http://localhost:3000/api/messages', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ text })
+        });
+        form.reset();
+        success.style.display = "block";
+      }
+    });
+  </script>
+</body>
+</html>
